@@ -1,0 +1,39 @@
+using System;
+
+namespace HelloWorld
+{
+    class Hello
+    {
+        static void Main()
+        {
+            string login;
+            int pass;
+            int attemps = 0;
+
+            do
+            {
+                Console.Write("Podaj login: ");
+                login = Console.ReadLine();
+                Console.Write("Wpisz hasło: ");
+                pass = Convert.ToInt32(Console.ReadLine());
+
+                attemps++;
+
+                if (attemps > 2)
+                {
+                    Console.WriteLine("Wykorzystano wszystkie 3 próby");
+                }
+
+            } while (((login != "admin") || (pass != 1234)) && (attemps < 3));
+
+            if (((login == "admin") && (pass == 1234)) && (attemps < 3))
+            {
+                Console.WriteLine("Logowanie udane!");
+            }
+
+            Console.ReadKey();
+
+        }
+                
+    }
+}
