@@ -6,8 +6,7 @@ namespace HelloWorld
     {
         static void Main()
         {
-            string login;
-            int pass;
+            string login, pass;
             int attemps = 0;
 
             do
@@ -15,7 +14,7 @@ namespace HelloWorld
                 Console.Write("Podaj login: ");
                 login = Console.ReadLine();
                 Console.Write("Wpisz hasło: ");
-                pass = Convert.ToInt32(Console.ReadLine());
+                pass = Console.ReadLine();
 
                 attemps++;
 
@@ -24,9 +23,9 @@ namespace HelloWorld
                     Console.WriteLine("Wykorzystano wszystkie 3 próby");
                 }
 
-            } while (((login != "admin") || (pass != 1234)) && (attemps < 3));
+            } while (((login != "admin") || (pass != "1234")) && (attemps < 3));
 
-            if (((login == "admin") && (pass == 1234)) && (attemps < 3))
+            if (((login == "admin") && (pass == "1234")) && (attemps < 3))
             {
                 Console.WriteLine("Logowanie udane!");
             }
