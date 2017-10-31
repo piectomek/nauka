@@ -11,23 +11,29 @@ namespace HelloWorld
 
             do
             {
+
                 Console.Write("Podaj login: ");
                 login = Console.ReadLine();
-                Console.Write("Wpisz hasło: ");
+                Console.Write("Podaj hasło: ");
                 pass = Console.ReadLine();
 
-                attemps++;
-
-                if (attemps > 2)
+                if ((login != "admin") || (pass != "1234"))
                 {
-                    Console.WriteLine("Wykorzystano wszystkie 3 próby");
+                    Console.WriteLine("Błąd!");
                 }
+
+                attemps++;                                       
 
             } while (((login != "admin") || (pass != "1234")) && (attemps < 3));
 
-            if (((login == "admin") && (pass == "1234")) && (attemps < 3))
+            if (((login != "admin") || (pass != "1234")) && (attemps > 2))
             {
-                Console.WriteLine("Logowanie udane!");
+                Console.WriteLine("Wykorzystałeś wszytkie 3 próby");
+            }
+
+            if (((login == "admin") && (pass == "1234")) && (attemps < 4))
+            {
+                Console.WriteLine("Logowanie udane");
             }
 
             Console.ReadKey();
