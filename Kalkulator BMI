@@ -46,9 +46,12 @@ namespace kalkulatorBMI
                 } else if ((bmi >= 35) && (bmi < 40))
                 {
                     Console.WriteLine("II stopień otyłości!");
-                } else if (bmi >= 40)
+                } else if ((bmi >= 40) && (bmi != 666))
                 {
                     Console.WriteLine("III stopień otyłości! (Otyłość skrajna)");
+                } else if (bmi == 666)
+                {
+                    Console.WriteLine("Easter Egg");
                 }
 
                 Console.WriteLine();
